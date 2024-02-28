@@ -23,10 +23,10 @@ export const updateUser = async (req, res, next)=>{
                 avatar: req.body.avatar,
             },
         }, {new: true})
-        console.log("updated")
+        // console.log("updated")
 
         const {password, ...rest}=updatedUser._doc;
-        res.sendStatus(200).json(rest)
+        res.status(200).json(rest)
     } catch (error) {
         next(error)
         

@@ -54,7 +54,7 @@ export default function Profile() {
 
   }
 
-  const handleChange=(e)=>{
+  const handleChange =(e)=>{
     setFormData({...formData, [e.target.id]: e.target.value })
   }
 
@@ -63,7 +63,7 @@ export default function Profile() {
     try {
 
       dispatch(updateUserStart());
-      const res=await fetch(`/server/user/update/${currentUser.id}`,
+      const res=await fetch(`/server/user/update/${currentUser._id}`,
       { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json',},
@@ -78,6 +78,7 @@ export default function Profile() {
       }
 
       dispatch(updateUserSuccess(data));
+      // console.log("success");
       
     } catch (error) {
       dispatch(updateUserFailure(error.message));
