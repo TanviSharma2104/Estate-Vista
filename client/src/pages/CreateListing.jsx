@@ -154,7 +154,7 @@ export default function CreateListing() {
 
   return (
     <main className='p-3 max-w-4xl mx-auto'>
-        <h1 className='text-3xl font-semibold text-center my-7'>Create a Listing</h1>
+        <h1 className='text-3xl font-semibold text-center my-7 text-slate-700'>Create a Listing</h1>
 
         <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
           {/* leftside div */}
@@ -195,7 +195,7 @@ export default function CreateListing() {
                     <p>Baths</p>
                   </div>
                   <div className='flex items-center gap-2'>
-                    <input onChange={handleChange} value={formData.regularPrice} type="number" id='regularPrice' min='50' max='100000' required className='p-3 border border-gray-300 rounded-lg' />
+                    <input onChange={handleChange} value={formData.regularPrice} type="number" id='regularPrice' min='50' max='1000000' required className='p-3 border border-gray-300 rounded-lg' />
                     <div className='flex flex-col items-center'>
                       <p>Regular Price</p>
                       <span className='text-xs'>($/ month)</span>
@@ -203,7 +203,7 @@ export default function CreateListing() {
                   </div>
                   {formData.offer && (
                       <div className='flex items-center gap-2'>
-                        <input onChange={handleChange} value={formData.discountPrice} type="number" id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300 rounded-lg' />
+                        <input onChange={handleChange} value={formData.discountPrice} type="number" id='discountPrice' min='0' max='1000000' required className='p-3 border border-gray-300 rounded-lg' />
                         <div className='flex flex-col items-center'>
                           <p>Discounted Price</p>
                           <span className='text-xs'>($/ month)</span>
